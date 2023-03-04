@@ -1,0 +1,458 @@
+/********** General ************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/********** Header ***********/
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 80px;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 3;
+    transition: background-color .6s;
+}
+
+header.active {
+    background-color: white;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .logo {
+    width: 200px;
+}
+
+header .toggle {
+    width: 35px;
+    filter: invert(100%);
+}
+
+header .menu:target {
+    transform: none;
+}
+
+/********* Menu ***********/
+.menu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0; 
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform .6s;
+    background: linear-gradient(180deg,#00ad6e 0%,#523695 134.86%);
+    display: flex;
+}
+
+.menu .close {
+    filter: invert(100%);
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
+.menu img {
+    height: 100%;
+    width: 350px;
+}
+
+.menu .bg {
+    margin: 0 80px;
+    flex: 1;
+    padding: 40px 0;
+}
+
+.menu .redes img {
+    width: 20px;
+    filter: invert(100%);
+    margin-left: 10px;
+}
+
+.menu .bg a {
+    font-size: 30px;
+}
+
+.menu .bg > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid white;
+}
+
+.menu .info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+}
+
+.menu .info ul {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu .info li span {
+    padding-left: 10px;
+}
+
+/********** Bg ***********/
+section.bg {
+    background: linear-gradient(rgba(0,0,0,.2) 100%, transparent), url("../../rg/img/main-banner.png.webp");
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 100px;
+    color: white;
+}
+
+section.bg h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+section.bg p {
+    font-size: 20px;
+    width: 400px;
+    line-height: 30px;
+}
+
+/********* Second ***********/
+.second .banner {
+    display: flex;
+    width: 85%;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(53, 52, 52);
+    transform: translateY(50%);
+    margin-top: -60px;
+}
+
+.second .banner > div {
+    padding: 50px 60px;
+}
+
+.second .banner hr {
+    height: 200px;
+    width: 6px;
+    display: block;
+    margin: auto 0;
+    border: none;
+    background-color: white;
+}
+
+.second .banner h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+.second .banner p {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.second img {
+    width: 100%;
+}
+
+/********* third ***********/
+.third {
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    padding-bottom: 0;
+}
+
+.third h2 {
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+
+.third .cont-cards {
+    width: 100%;
+    padding: 0 10%;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    background: linear-gradient(transparent 50%, #00ad6e 50%);
+}
+
+.third .card {
+    position: relative;
+    display: flex;
+    color: white;
+    overflow: hidden;
+}
+
+.third .card:hover > div {
+    opacity: 1;
+}
+
+.third .card img {
+    width: 100%;
+}
+
+.third .card h3 {
+    position: absolute;
+    bottom: 50px;
+    left: 30px;
+    font-size: 25px;
+}
+
+.third .card > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: center;
+    padding: 0 30px;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.third .card h4 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.third .card p {
+    font-size: 20px;
+}
+
+.third .team {
+    width: 100%;
+    background-color: #00ad6e;
+    padding: 80px 0;
+    padding-bottom: 100px;
+    color: white;
+}
+
+.third .cont-box {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin: 0 auto;
+}
+
+.third .box h3 {
+    margin: 10px 0;
+}
+
+/************** Questions ***************/
+.questions {
+    width: 100%;
+    background-color: #523695;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.questions > h2 {
+    font-size: 40px;
+    color: white;
+    padding: 0 10px;
+    margin-bottom: 40px;
+}
+
+.questions > div {
+    width: 80%;
+    margin: 15px auto;
+    text-align: start;
+    cursor: pointer;
+}
+
+.questions > div:last-child {
+    margin-bottom: 0;
+}
+
+.questions .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.questions > div hr {
+    border: none;
+    border-top: 1px solid gray;
+}
+
+.questions .top h2 {
+    font-size: 22px;
+    color: #8a84ff;
+}
+
+.questions .top button {
+    background-color: transparent;
+}
+
+.questions .top img {
+    filter: invert(100%);
+    width: 30px;
+    height: 30px;
+}
+
+.questions p {
+    font-size: 20px;
+    margin-top: 20px;
+    color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .6s;
+}
+
+.questions p.active {
+    max-height: 150px;
+}
+
+/********* Formulario ***********/
+.formulario {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.formulario > img {
+    width: 40%;
+}
+
+.formulario > div {
+    width: 60%;
+    padding: 40px 10%;
+}
+
+.formulario h2 {
+    font-size: 35px;
+}
+
+.formulario > div > span {
+    font-size: 20px;
+    display: block;
+    margin: 30px 0;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario form > input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 17px;
+}
+
+.formulario form .cont-input {
+    display: flex;
+    gap: 20px;
+}
+
+.formulario form .cont-input input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid black;
+    height: 40px;
+    font-size: 17px;
+}
+
+.formulario button {
+    padding: 10px 80px;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(180deg,#523695 0%,#00ad6e 100%);
+    width: fit-content;
+    margin-top: 15px;
+}
+
+.formulario form .check{
+    margin-top: 15px;
+}
+
+/************** Footer ***************/
+footer {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    background-color: rgb(49, 48, 48);
+    width: 100%;
+    padding: 50px 80px;
+    color: white;
+    gap: 40px;
+}
+
+footer .box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    font-size: 18px;
+}
+
+footer .box .redes img {
+    filter: invert(100%);
+    margin-right: 10px;
+}
+
+footer .box > img {
+    object-fit: cover;
+    width: 120px;
+}
+
+footer .box > a {
+    transition: border-bottom .4s;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+}
+
+footer .box > a:hover {
+    border-color: white;
+}
