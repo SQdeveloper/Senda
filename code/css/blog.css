@@ -136,7 +136,7 @@ header .menu:target {
 
 /********** Bg ***********/
 section.bg {
-    background: linear-gradient(rgba(0,0,0,.2) 100%, transparent), url("../../rg/img/banner-trayectoria.png.webp");
+    background: linear-gradient(rgba(0,0,0,.2) 100%, transparent), url("../../rg/img/main-banner.jpg.webp");
     height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
@@ -159,120 +159,75 @@ section.bg p {
     line-height: 30px;
 }
 
-/************* Content ***********/
+/************* Content ***************/
 .content {
     width: 100%;
-    text-align: center;
-    margin: 50px 0;
-    margin-bottom: 0;
+    padding: 80px 0;
+    background-color: #00ad6e;
+    color: white;
 }
 
-.content > h2  {
+.content .cont-cards {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.content .card {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.content .card:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+.content .card h2 {
     font-size: 45px;
 }
 
-.content .options {
-    margin: 50px auto;
-    width: 80%;
-    display: flex;
-    gap: 30px;
+.content .card p {
+    font-size: 20px;
+    margin: 20px 0;
 }
 
-.content select {
-    border: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 15px;
-    font-size: 18px;
-    flex: 1;
+.content .card a {
+    background-color: #523695;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    display: block;
+    width: fit-content;
 }
 
-/********* Proyectos *********/
-.proyectos {
-    background: linear-gradient(white calc((100% - 110px)/4),#523695 0%);
-    text-align: center;
-    margin: 50px 0;
-    margin-bottom: 0;
-    padding-bottom: 80px;
+.content .card img {
+    width: 50%;
+    height: 300px;
+    border-radius: 10px;
 }
 
-.proyectos .box-grid {
-    display: grid;
-    width: 80%;
+.content .box-flex {
+    width: 85%;
     margin: 0 auto;
+    display: grid;
     gap: 30px;
-    margin-top: 60px;
+    row-gap: 50px;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.proyectos .box {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-}
-
-.proyectos .box:hover > .second {
-    transform: none;
-}
-
-.proyectos .box:hover > img.logo {
-    opacity: 0;    
-}
-
-.proyectos .box > img {
+.content .box img {
     width: 100%;
+    border-radius: 10px;
 }
 
-.proyectos .box img.logo {
-    position: absolute;
-    width: 70%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity .5s;
+.content .box h2 {
+    font-size: 25px;
+    margin: 15px 0;
 }
 
-.proyectos .box > span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #00ad6e;
-    color: white;
-    padding: 10px 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.proyectos .second {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: rgba(82, 54, 149, .8);
-    transform: translateY(100%);
-    transition: transform .5s;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    font-size: 18px;
-}
-
-.proyectos .second a {
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #00ad6e;
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.proyectos .second div {
-    display: flex;
-    margin: 0 auto;
-    gap: 5px;
+.content .box span {
+    font-size: 20px;
 }
 
 /********* Formulario ***********/
@@ -395,6 +350,19 @@ footer .box > a:hover {
         padding: 30px;
     }
 
+    /******** Content *********/
+    .content .card, .content .card:nth-child(2) {
+        flex-direction: column;
+    }
+
+    .content .box-flex {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .content .card img {
+        width: 100%;
+    }
+
     /********* Formulario **********/
     .formulario > img {
         display: none;
@@ -430,33 +398,21 @@ footer .box > a:hover {
         margin-right: 10px;
     }
 
+    /******** Content **********/
+    .content .cont-cards, .content .box-flex {
+        width: 90%;
+    }
+
+    .content .card h2 {
+        font-size: 35px;
+    }
+
     /******* Header ********/
     header {
         height: 80px;
     }
     header .logo {
         width: 150px;
-    }
-
-    /******* Content *******/
-    .content > h2 {
-        font-size: 40px;
-    }
-    
-    .content .options {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    /******* Proyecto ********/
-    .proyectos .box-grid {
-        grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-    }
-
-    .proyectos .second {
-        height: 70%;
-        gap: 20px;
     }
 
     /********* Formulario *********/
@@ -480,10 +436,20 @@ footer .box > a:hover {
         padding-bottom: 20px;
     }
 
+    /******** Content *********/
+    .content .box-flex {
+        grid-template-columns: 1fr;
+    }
+
+
     /******** Bg *********/
     section.bg {
         padding: 0;
         align-items: center;
+    }
+
+    section.bg p {
+        text-align: center;
     }
 }
 
@@ -502,17 +468,9 @@ footer .box > a:hover {
         margin-top: 0;
     }
 
-    /******* Proyecto ********/
-    .proyectos .box-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .proyectos .second {
-        height: 50%;
-    }
-
-    .proyectos .box {
-        height: 400px;
+    /******** Content ********/
+    .content .card img {
+        height: 250px;
     }
 
     /********* Bg *******/
@@ -520,5 +478,9 @@ footer .box > a:hover {
         padding: 0 20px;
         text-align: center;
         width: 100%
+    }
+
+    section.bg h1 {
+        text-align: center;
     }
 }

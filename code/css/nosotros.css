@@ -19,6 +19,10 @@ ul {
     list-style: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /********** Header ***********/
 header {
     display: flex;
@@ -346,7 +350,7 @@ section.bg p {
 }
 
 .questions p.active {
-    max-height: 150px;
+    max-height: 350px;
 }
 
 /********* Formulario ***********/
@@ -455,4 +459,203 @@ footer .box > a {
 
 footer .box > a:hover {
     border-color: white;
+}
+
+/************ Querys ************/
+@media (max-width: 1000px) {
+    /********* Menu ***********/
+    .menu > img {
+        display: none;
+    }
+
+    /******* Header ********/
+    header {
+        padding: 30px;
+    }
+
+    /********** Second **********/
+    .second {
+        position: relative;
+    }
+
+    .second .banner {
+        flex-direction: column;
+    }
+
+    .second .banner hr {
+        width: 80%;
+        margin: 0 auto;
+        height: 3px;
+    }
+
+    .second .banner {
+        position: absolute;
+        transform: none;
+        margin: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .second img {
+        height: 600px;
+    }
+
+    /*********** Third ************/
+    .third .cont-cards {
+        flex-direction: column;
+    }
+
+    .third .card {
+        height: 200px;
+    }
+
+    .third .card img {
+        object-fit: cover;
+    }
+
+    /********* Formulario **********/
+    .formulario > img {
+        display: none;
+    }
+
+    .formulario > div {
+        width: 100%;
+    }
+
+    /*********** Footer **************/
+    footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 820px) {
+    /********** Menu **********/
+    .menu .info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu .bg {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        padding: 0;
+    }
+
+    .menu .redes img {
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    /******* Header ********/
+    header {
+        height: 80px;
+    }
+    header .logo {
+        width: 150px;
+    }
+
+    /********* Formulario *********/
+    .formulario > div {
+        padding: 40px 5%;
+    }
+
+    /*********** Footer *************/
+    footer {
+        padding: 50px 5%;
+    }
+}
+
+@media (max-width: 650px) {
+    /************ Formulario ************/
+    .formulario form .cont-input {
+        flex-direction: column;
+    }
+
+    .formulario form input {
+        padding-bottom: 20px;
+    }
+
+    /******** Bg *********/
+    section.bg {
+        padding: 0;
+        align-items: center;
+    }
+
+    /********* Second *********/
+    .second img {
+        height: 600px;
+        object-fit: cover;
+    }
+
+    .second .banner > div {
+        padding: 30px 60px;
+
+    }
+
+    .second .banner h2 {
+        font-size: 40px;
+    }
+
+    .second .banner {
+         width: 90%;
+    }
+
+    
+    /******* Third ********/
+    .third h2 {
+        font-size: 40px;
+    }
+
+    .third .cont-cards {
+        padding: 0 5%;
+    }
+
+    .third .cont-box {
+        width: 90%;
+        gap: 30px;
+    }
+    
+    /******* Questions ********/
+    .questions > h2 {
+        font-size:  35px;
+    }
+
+    .questions > div {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    /******* Header ********/
+    header {
+        padding: 0 10px;
+    }
+
+    /******** Formulario *********/
+    .formulario h2 {
+        display: none;
+    }
+
+    .formulario > div > span {
+        margin-top: 0;
+    }
+
+    /********* Bg *******/
+    section.bg p {
+        padding: 0 20px;
+        text-align: center;
+        width: 100%
+    }
+
+    /******** Second *********/
+    .second .banner > div {
+        padding: 30px 10px;
+    }
+
+    .second img {
+        height: 650px;
+    }
 }

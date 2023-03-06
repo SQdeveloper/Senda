@@ -163,116 +163,89 @@ section.bg p {
 .content {
     width: 100%;
     text-align: center;
-    margin: 50px 0;
-    margin-bottom: 0;
+    padding: 80px 0;
+    background: linear-gradient(white calc((100% + 220px) / 6), #523695 0%);
 }
 
-.content > h2  {
-    font-size: 45px;
-}
-
-.content .options {
-    margin: 50px auto;
-    width: 80%;
-    display: flex;
-    gap: 30px;
-}
-
-.content select {
-    border: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 15px;
-    font-size: 18px;
-    flex: 1;
-}
-
-/********* Proyectos *********/
-.proyectos {
-    background: linear-gradient(white calc((100% - 110px)/4),#523695 0%);
-    text-align: center;
-    margin: 50px 0;
-    margin-bottom: 0;
-    padding-bottom: 80px;
-}
-
-.proyectos .box-grid {
-    display: grid;
-    width: 80%;
+.content .grid-box {
+    width: 85%;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 350px);
     gap: 30px;
-    margin-top: 60px;
-    grid-template-columns: repeat(3, 1fr);
 }
 
-.proyectos .box {
-    position: relative;
+.content .box {
+    background-image: url("../../rg/img/banner-echeverria.jpg.webp");
+    background-size: cover;
     display: flex;
+    flex-direction: column;
+    padding: 30px;
+    color: white;
+    justify-content: end;
+    align-items: start;
+    position: relative;
     overflow: hidden;
 }
 
-.proyectos .box:hover > .second {
-    transform: none;
+.content .box:last-child {
+    grid-column: 1/3;
 }
 
-.proyectos .box:hover > img.logo {
-    opacity: 0;    
+.content .box:hover a {
+    opacity: 1;
 }
 
-.proyectos .box > img {
+.content .box h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.content .box span {
+    font-size: 20px;
+}
+
+.content .box .enlace-second {
     width: 100%;
-}
-
-.proyectos .box img.logo {
-    position: absolute;
-    width: 70%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity .5s;
-}
-
-.proyectos .box > span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #00ad6e;
-    color: white;
-    padding: 10px 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.proyectos .second {
+    height: 50%;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 50%;
-    background-color: rgba(82, 54, 149, .8);
-    transform: translateY(100%);
-    transition: transform .5s;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    font-size: 18px;
+    background-color: rgba(0,0,0,.8);
+    transform: translateY(200%);
+    transition: transform .6s;
 }
 
-.proyectos .second a {
-    padding: 10px 20px;
+.content .box .enlace-second > a {
+    display: flex;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.content .box .cont-span {
+    background-color: rgba(255,255,255,.5);
+    backdrop-filter: blur(30px);
+    padding: 8px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.content .box div span  {
+    color: black;
+}
+
+.content .box a {
+    background-color: #523695;
+    padding: 10px 30px;
     border-radius: 20px;
-    background-color: #00ad6e;
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.proyectos .second div {
-    display: flex;
-    margin: 0 auto;
-    gap: 5px;
+    font-size: 20px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0;
+    transitioN: opacity .5s;
 }
 
 /********* Formulario ***********/
@@ -395,6 +368,16 @@ footer .box > a:hover {
         padding: 30px;
     }
 
+    /********* Content **********/
+    .content .grid-box {
+        width: 90%;
+        grid-template-rows: repeat(5, 350px);
+    }
+
+    .content .box {
+        grid-column: 1/3;
+    }
+
     /********* Formulario **********/
     .formulario > img {
         display: none;
@@ -438,25 +421,10 @@ footer .box > a:hover {
         width: 150px;
     }
 
-    /******* Content *******/
-    .content > h2 {
-        font-size: 40px;
-    }
-    
-    .content .options {
-        flex-direction: column;
+    /********* Content **********/
+    .content .grid-box {
         width: 90%;
-    }
-
-    /******* Proyecto ********/
-    .proyectos .box-grid {
-        grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-    }
-
-    .proyectos .second {
-        height: 70%;
-        gap: 20px;
+        grid-template-rows: repeat(5, 300px);
     }
 
     /********* Formulario *********/
@@ -502,17 +470,22 @@ footer .box > a:hover {
         margin-top: 0;
     }
 
-    /******* Proyecto ********/
-    .proyectos .box-grid {
-        grid-template-columns: 1fr;
+    /********* Content **********/
+    .content .grid-box {
+        width: 90%;
+        grid-template-rows: repeat(5, 250px);
     }
 
-    .proyectos .second {
-        height: 50%;
+    .content .box:hover .enlace-second {
+        transform: none;
     }
 
-    .proyectos .box {
-        height: 400px;
+    .content .box a {
+        display: none;
+    }
+
+    .content .box:hover .enlace-second {
+        transform: none;
     }
 
     /********* Bg *******/
@@ -520,5 +493,9 @@ footer .box > a:hover {
         padding: 0 20px;
         text-align: center;
         width: 100%
+    }
+
+    section.bg h1 {
+        text-align: center;
     }
 }
